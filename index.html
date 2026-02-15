@@ -49,8 +49,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Never Forget Home Maintenance Again</h1>
-            <p>Carl sends you friendly text reminders so nothing falls through the cracks.</p>
+            <h1>Carl Keeps Your Home in Check</h1>
+            <p>Get friendly text reminders so nothing falls through the cracks.</p>
             <a href="#early-access" class="cta-button">Join the Waitlist</a>
         </div>
     </section>
@@ -258,36 +258,36 @@
             <p>Be among the first to meet Carl. Launching soon.</p>
             
             <form class="signup-form" id="waitlist-form">
-                <input 
-                    type="text" 
-                    id="first-name" 
-                    placeholder="First Name" 
+                <input
+                    type="text"
+                    id="first-name"
+                    placeholder="First Name"
                     required
+                    autocomplete="given-name"
                 >
-                <input 
-                    type="email" 
-                    id="email" 
-                    placeholder="Email Address" 
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
                     required
+                    autocomplete="email"
                 >
                 <input
                     type="tel"
                     id="phone"
-                    placeholder="Phone Number (e.g., 555-123-4567)"
-                    pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
-                    title="Please enter a valid 10-digit phone number"
+                    placeholder="Phone Number"
                     required
+                    autocomplete="tel"
                 >
                 <input
                     type="text"
                     id="zip"
-                    placeholder="Zip Code (5 digits)"
-                    pattern="[0-9]{5}"
-                    maxlength="5"
-                    title="Please enter a valid 5-digit zip code"
+                    placeholder="Zip Code"
                     required
+                    maxlength="5"
+                    autocomplete="postal-code"
                 >
-                <button type="submit">Join Waitlist</button>
+                <button type="submit" id="submit-btn">Join Waitlist</button>
             </form>
             <div id="signup-message"></div>
         </div>
@@ -306,129 +306,112 @@
     </footer>
 
     <script>
-        // Initialize Supabase client
-        const supabaseUrl = CONFIG.SUPABASE_URL;
-        const supabaseKey = CONFIG.SUPABASE_ANON_KEY;
-        
-        if (!supabaseUrl || !supabaseKey) {
-            console.error('Supabase configuration missing. Please set SUPABASE_URL and SUPABASE_ANON_KEY in config.js');
-        }
-        
-        let supabase = null;
-        if (supabaseUrl && supabaseKey && typeof window.supabase !== 'undefined') {
+        // Wait for DOM and all scripts to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Supabase client
+            let supabase = null;
+
             try {
-                supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
-            } catch (error) {
-                console.error('Error creating Supabase client:', error);
-            }
-        } else {
-            if (!supabaseUrl || !supabaseKey) {
-                console.error('Supabase URL or key missing in config.js');
-            }
-            if (typeof window.supabase === 'undefined') {
-                console.error('Supabase library not loaded. Check that the script tag is present.');
-            }
-        }
-
-        // Handle form submission
-        document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const messageDiv = document.getElementById('signup-message');
-            const form = this;
-
-            // Get form values
-            const firstName = document.getElementById('first-name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const zipCode = document.getElementById('zip').value.trim();
-
-            // Validate
-            if (!firstName || !email || !phone || !zipCode) {
-                messageDiv.textContent = 'Please fill in all fields.';
-                messageDiv.style.color = '#ff6b6b';
-                return;
-            }
-
-            // Validate phone number format (10 digits)
-            const phoneDigits = phone.replace(/\D/g, '');
-            if (phoneDigits.length !== 10) {
-                messageDiv.textContent = 'Please enter a valid 10-digit phone number.';
-                messageDiv.style.color = '#ff6b6b';
-                return;
-            }
-
-            // Validate zip code format (5 digits)
-            if (!/^\d{5}$/.test(zipCode)) {
-                messageDiv.textContent = 'Please enter a valid 5-digit zip code.';
-                messageDiv.style.color = '#ff6b6b';
-                return;
-            }
-            
-            // Show loading state
-            messageDiv.textContent = 'Submitting...';
-            messageDiv.style.color = '#faf6f1';
-            const submitButton = form.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.textContent = 'Submitting...';
-            
-            try {
-                if (!supabase) {
-                    throw new Error('Supabase not configured. Please check config.js');
+                if (typeof CONFIG === 'undefined') {
+                    throw new Error('CONFIG not loaded');
                 }
-                
-                // Normalize phone number to E.164 format (+1XXXXXXXXXX)
-                const normalizedPhone = '+1' + phoneDigits;
 
-                // Insert into Supabase
-                const { data, error } = await supabase
-                    .from('waitlist_signups')
-                    .insert([
-                        {
+                if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_ANON_KEY) {
+                    throw new Error('Supabase credentials missing');
+                }
+
+                if (typeof window.supabase === 'undefined') {
+                    throw new Error('Supabase library not loaded');
+                }
+
+                supabase = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
+                console.log('Supabase initialized successfully');
+            } catch (error) {
+                console.error('Initialization error:', error);
+            }
+
+            // Handle form submission
+            const form = document.getElementById('waitlist-form');
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const messageDiv = document.getElementById('signup-message');
+                const submitButton = document.getElementById('submit-btn');
+
+                // Get form values
+                const firstName = document.getElementById('first-name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const zipCode = document.getElementById('zip').value.trim();
+
+                // Simple validation
+                const phoneDigits = phone.replace(/\D/g, '');
+                if (phoneDigits.length < 10) {
+                    showMessage('Please enter a valid phone number', 'error');
+                    return;
+                }
+
+                if (zipCode.replace(/\D/g, '').length !== 5) {
+                    showMessage('Please enter a valid 5-digit zip code', 'error');
+                    return;
+                }
+
+                // Show loading state
+                submitButton.disabled = true;
+                submitButton.textContent = 'Joining...';
+                showMessage('', 'loading');
+            
+                try {
+                    if (!supabase) {
+                        throw new Error('Unable to connect. Please refresh and try again.');
+                    }
+
+                    // Normalize phone number to E.164 format
+                    const normalizedPhone = '+1' + phoneDigits.slice(-10);
+
+                    // Insert into Supabase
+                    const { data, error } = await supabase
+                        .from('waitlist_signups')
+                        .insert([{
                             first_name: firstName,
                             email: email,
                             phone: normalizedPhone,
-                            zip_code: zipCode
+                            zip_code: zipCode.replace(/\D/g, '')
+                        }])
+                        .select();
+
+                    if (error) {
+                        if (error.code === '23505' || error.message.includes('duplicate')) {
+                            showMessage('You\'re already on the waitlist! We\'ll be in touch soon.', 'success');
+                            form.reset();
+                        } else {
+                            throw error;
                         }
-                    ])
-                    .select();
-                
-                if (error) {
-                    // Handle duplicate email
-                    if (error.code === '23505' || error.message.includes('duplicate')) {
-                        messageDiv.innerHTML = '✅ <strong>You\'re already on the waitlist!</strong><br>We\'ll be in touch soon.';
-                        messageDiv.style.color = '#faf6f1';
-                        messageDiv.style.backgroundColor = 'rgba(139, 158, 111, 0.3)';
-                        messageDiv.style.padding = '20px';
-                        messageDiv.style.borderRadius = '15px';
-                        messageDiv.style.border = '2px solid #8b9e6f';
-                        messageDiv.style.marginTop = '20px';
-                        form.reset();
                     } else {
-                        throw error;
+                        showMessage('🎉 You\'re on the list! We\'ll be in touch soon.', 'success');
+                        form.reset();
                     }
-                } else {
-                    // Success - enhanced message
-                    messageDiv.innerHTML = '🎉 <strong>Welcome to the waitlist!</strong><br>Check your email for confirmation. We\'ll be in touch soon!';
-                    messageDiv.style.color = '#faf6f1';
-                    messageDiv.style.backgroundColor = 'rgba(139, 158, 111, 0.3)';
-                    messageDiv.style.padding = '20px';
-                    messageDiv.style.borderRadius = '15px';
-                    messageDiv.style.border = '2px solid #8b9e6f';
-                    messageDiv.style.marginTop = '20px';
-                    form.reset();
+                } catch (error) {
+                    console.error('Submission error:', error);
+                    showMessage(error.message || 'Something went wrong. Please try again.', 'error');
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Join Waitlist';
                 }
-            } catch (error) {
-                console.error('Error submitting form:', error);
-                messageDiv.textContent = '❌ Something went wrong. Please try again later.';
-                messageDiv.style.color = '#faf6f1';
-                messageDiv.style.backgroundColor = 'rgba(184, 93, 58, 0.3)';
-                messageDiv.style.padding = '20px';
-                messageDiv.style.borderRadius = '15px';
-                messageDiv.style.border = '2px solid #b85d3a';
-                messageDiv.style.marginTop = '20px';
-            } finally {
-                submitButton.disabled = false;
-                submitButton.textContent = 'Join Waitlist';
+            });
+
+            // Helper function to show messages
+            function showMessage(text, type) {
+                const messageDiv = document.getElementById('signup-message');
+                messageDiv.textContent = text;
+                messageDiv.className = 'message-' + type;
+
+                if (type === 'success') {
+                    messageDiv.style.cssText = 'padding: 20px; margin-top: 20px; border-radius: 15px; background: rgba(139, 158, 111, 0.3); border: 2px solid #8b9e6f; color: #faf6f1; font-weight: 600;';
+                } else if (type === 'error') {
+                    messageDiv.style.cssText = 'padding: 20px; margin-top: 20px; border-radius: 15px; background: rgba(184, 93, 58, 0.3); border: 2px solid #b85d3a; color: #faf6f1; font-weight: 600;';
+                } else {
+                    messageDiv.style.cssText = '';
+                }
             }
         });
     </script>
