@@ -57,13 +57,13 @@ header.with-margin {
     letter-spacing: 2px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 20px;
     font-family: 'Inter', sans-serif;
 }
 
-.logo svg {
-    width: 40px;
-    height: 40px;
+.logo img {
+    width: 80px;
+    height: 80px;
 }
 
 /* Centered logo for privacy/terms */
@@ -78,6 +78,33 @@ header.with-margin {
     text-decoration: none;
 }
 
+
+
+.phone-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #c77f4a;
+    color: #fff;
+    text-decoration: none;
+    border: 3px solid #3d2817;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.2s;
+    margin-left: auto;    
+    font-family: 'Inter', sans-serif;
+}
+
+.phone-link:hover {
+    background: #b36b3a;
+    transform: translateY(-2px);
+}
+
+.phone-link:active {
+    transform: translateY(0);
+}
 /* ============================================
    Typography
    ============================================ */
