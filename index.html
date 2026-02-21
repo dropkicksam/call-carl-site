@@ -26,8 +26,7 @@
         <div class="container">
             <div class="logo">
                 <img src="media/call_carl_logo_medium.png" alt="Pacer Logo">
-                Call Carl  
-                <a href="sms:9147456963&body=START" class="phone-link">text now: 914-745-6963</a> <!-- TODO: Add phone number ending in 2275 (CARL)-->
+                Call Carl
             </div>
             
         </div>
@@ -260,8 +259,7 @@
                 <input
                     type="tel"
                     id="phone"
-                    placeholder="Phone Number"
-                    required
+                    placeholder="Phone Number (optional)"
                     autocomplete="tel"
                 >
                 <input
@@ -272,8 +270,22 @@
                     maxlength="5"
                     autocomplete="postal-code"
                 >
-                <div class="sms-consent">
-                    <p>By joining the waitlist, you consent to receive recurring automated text messages from <strong>Call Carl</strong> at the phone number provided. Message frequency varies (approx. 2-8 per month). Message and data rates may apply. Reply STOP to opt out. See our <a href="/terms.html">Terms & Conditions</a> and <a href="/privacy.html">Privacy Policy</a>.</p>
+                <div class="consent-checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="sms-consent" name="sms-consent">
+                        <span class="checkbox-text">
+                            I consent to receive recurring automated text messages from <strong>Call Carl</strong> at the phone number provided. Message frequency varies (approx. 2-8 per month). Message and data rates may apply. Reply STOP to opt out. Consent is not required to join the waitlist. See <a href="/terms.html">Terms & Conditions</a>.
+                        </span>
+                    </label>
+                </div>
+
+                <div class="consent-checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms-consent" name="terms-consent">
+                        <span class="checkbox-text">
+                            I agree to the <a href="/terms.html">Terms & Conditions</a> and <a href="/privacy.html">Privacy Policy</a>.
+                        </span>
+                    </label>
                 </div>
                 <button type="submit" id="submit-btn">Join Waitlist</button>
             </form>
@@ -326,20 +338,29 @@
                 const submitButton = document.getElementById('submit-btn');
 
                 // Get form values
-                const firstName = document.getElementById('first-name').value.trim();
                 const email = document.getElementById('email').value.trim();
                 const phone = document.getElementById('phone').value.trim();
                 const zipCode = document.getElementById('zip').value.trim();
+                const smsConsent = document.getElementById('sms-consent').checked;
+                const termsConsent = document.getElementById('terms-consent').checked;
 
                 // Simple validation
-                const phoneDigits = phone.replace(/\D/g, '');
-                if (phoneDigits.length < 10) {
-                    showMessage('Please enter a valid phone number', 'error');
-                    return;
+                if (phone && phone.trim() !== '') {
+                    const phoneDigits = phone.replace(/\D/g, '');
+                    if (phoneDigits.length < 10) {
+                        showMessage('Please enter a valid phone number', 'error');
+                        return;
+                    }
                 }
 
                 if (zipCode.replace(/\D/g, '').length !== 5) {
                     showMessage('Please enter a valid 5-digit zip code', 'error');
+                    return;
+                }
+
+                // If phone is provided but no SMS consent, warn user
+                if (phone && phone.trim() !== '' && !smsConsent) {
+                    showMessage('If you provide a phone number, please check the SMS consent box to receive text reminders', 'error');
                     return;
                 }
 
@@ -353,18 +374,25 @@
                         throw new Error('Unable to connect. Please refresh and try again.');
                     }
 
-                    // Normalize phone number to E.164 format
-                    const normalizedPhone = '+1' + phoneDigits.slice(-10);
+                    // Prepare insert data
+                    const insertData = {
+                        email: email,
+                        zip_code: zipCode.replace(/\D/g, ''),
+                        sms_consent: smsConsent,
+                        terms_consent: termsConsent
+                    };
+
+                    // Only add phone if provided
+                    if (phone && phone.trim() !== '') {
+                        const phoneDigits = phone.replace(/\D/g, '');
+                        const normalizedPhone = '+1' + phoneDigits.slice(-10);
+                        insertData.phone = normalizedPhone;
+                    }
 
                     // Insert into Supabase
                     const { data, error } = await supabase
                         .from('waitlist_signups')
-                        .insert([{
-                            first_name: firstName,
-                            email: email,
-                            phone: normalizedPhone,
-                            zip_code: zipCode.replace(/\D/g, '')
-                        }])
+                        .insert([insertData])
                         .select();
 
                     if (error) {
