@@ -1248,7 +1248,7 @@ footer a:hover {
     width: 210px;
     background: #111;
     border: 6px solid #111;
-    border-radius: 46px;
+    border-radius: 40px;
     overflow: hidden;
     box-shadow: 0 0 0 1px #444;
     position: relative;
@@ -1259,7 +1259,7 @@ footer a:hover {
     overflow: hidden;
     position: relative;
     background: #000;
-    border-radius: 40px;
+    border-radius: 34px;
 }
 
 .iphone-screen img {
@@ -1361,13 +1361,14 @@ footer a:hover {
     gap: 12px;
     font-size: 18px;
     font-weight: 700;
-    color: #d4c4b0;
+    color: #faf6f1;
     font-family: 'Work Sans', sans-serif;
 }
 
 .footer-logo {
     width: 36px;
     height: 36px;
+    border-radius: 22%;
 }
 
 .footer-links {
