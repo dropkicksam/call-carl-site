@@ -345,10 +345,9 @@
                 try {
                     if (!supabase) throw new Error('Unable to connect. Please refresh and try again.');
 
-                    const { data, error } = await supabase
+                    const { error } = await supabase
                         .from('waitlist_signups')
-                        .insert([{ email: email, terms_consent: termsConsent, source: 'website' }])
-                        .select();
+                        .insert([{ email: email, terms_consent: termsConsent, source: 'website' }]);
 
                     if (error) {
                         if (error.code === '23505' || error.message.includes('duplicate')) {
