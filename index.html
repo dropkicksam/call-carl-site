@@ -3,185 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Call Carl - Your Home Maintenance Buddy</title>
-    <meta name="description" content="Never forget home maintenance again. Carl sends you friendly text reminders so nothing falls through the cracks.">
-    
+    <title>Call Carl — Your AI Home Maintenance Assistant</title>
+    <meta name="description" content="Carl is an AI home maintenance assistant who keeps track of your home's systems, tells you what needs attention, and explains why — so nothing catches you off guard.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Call Carl — Your AI Home Maintenance Assistant">
+    <meta property="og:description" content="Carl is an AI home maintenance assistant who keeps track of your home's systems, tells you what needs attention, and explains why.">
+    <meta property="og:image" content="media/call_carl_logo_hero.png">
+    <meta property="og:type" content="website">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Work+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    
+
     <!-- Supabase Client -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
+
     <!-- Config -->
     <script src="config.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header>
+
+    <!-- Hero (includes nav) -->
+    <section class="hero hero-app">
         <div class="container">
-            <div class="logo">
-                <img src="media/call_carl_logo_medium.png" alt="Pacer Logo">
-                Call Carl
+            <div class="hero-nav">
+                <div class="logo">
+                    <img src="media/call_carl_logo_medium.png" alt="Call Carl Logo">
+                    Call Carl
+                </div>
             </div>
-            
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Carl Keeps Your House in Order</h1>
-            <p>The AI agent for home maintenance and repair.</p>
-            <a href="#early-access" class="cta-button">Join the Waitlist</a>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="problem">
-        <div class="container">
-            <h2>Homeownership is hard</h2>
-            <div class="problem-grid">
-                <div class="problem-item">
-                    <img src="media/icon - overwhelmed.png" alt="Overwhelmed" class="problem-icon">
-                    <h3>Overwhelming</h3>
-                    <p>Too many things to remember. HVAC filters, smoke detectors, gutter cleaning... when was the last time you did any of it?</p>
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <h1>Your home finally has a caretaker.</h1>
+                <p>Carl tracks your home's systems, stays ahead of what needs attention, and explains why — so nothing ever catches you off guard.</p>
+                <div class="hero-ctas">
+                    <a href="#" class="app-store-badge">
+                        <svg class="apple-logo" viewBox="0 0 814 1000" fill="white" aria-hidden="true"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.5 135.4-317.3 269-317.3 70.1 0 128.4 46.4 172.5 46.4 42.8 0 109.6-49 192.5-49 31.1 0 107.7 2.6 168.2 98.3zm-180.9-125.1c-31.1 36.9-75.8 65.2-152.1 65.2-9.6 0-19.2-1.3-28.5-2.6 1.3-45.2 17.9-87.4 47.7-117.8 32.4-32.7 80.5-55.8 132.3-58.4 1.3 8.3 1.9 16.6 1.9 23.6 0 43.9-15.9 88.5-101.3 89z"/></svg>
+                        <div class="badge-text">
+                            <span class="badge-line-top">Download on the</span>
+                            <span class="badge-line-bottom">App Store</span>
+                        </div>
+                    </a>
+                    <a href="#notify" class="cta-link">Get notified when we launch &rarr;</a>
                 </div>
-                <div class="problem-item">
-                    <img src="media/icon - expensive.png" alt="Overwhelmed" class="problem-icon">
-                    <h3>Expensive</h3>
-                    <p>Skipped maintenance turns into emergency repairs. A $30 filter becomes a $3,000 HVAC replacement.</p>
+            </div>
+            <div class="hero-image">
+                <div class="hero-phone-back">
+                    <div class="iphone-frame">
+                        <div class="iphone-screen">
+                            <img src="media/IMG_0333.PNG" alt="Carl showing your maintenance schedule">
+                        </div>
+                    </div>
                 </div>
-                <div class="problem-item">
-                    <img src="media/icon - home value.png" alt="Overwhelmed" class="problem-icon">
-                    <h3>Home Value</h3>
-                    <p>Neglected maintenance decreases your home's value and creates potential safety issues.</p>
-                </div>
-                <div class="problem-item">
-                    <img src="media/icon - mental load.png" alt="Overwhelmed" class="problem-icon">
-                    <h3>Mental Load</h3>
-                    <p>That nagging feeling that you're forgetting something important. Because you probably are.</p>
+                <div class="hero-phone-front">
+                    <div class="iphone-frame">
+                        <div class="iphone-screen">
+                            <img src="media/IMG_0335.PNG" alt="Carl hub">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solution Section -->
-    <section class="solution">
+    <!-- Features -->
+    <section class="features-section">
         <div class="container">
-            <h2>Meet Carl, Your Home Maintenance Agent</h2>
-            <p class="solution-subtitle">Carl stays on top of your home for you.</p>
-            
-            <div class="features">
-                <div class="feature">
-                    <img src="media/icon - text.png" alt="Overwhelmed" class="problem-icon">
-                    <h3>Text-Based</h3>
-                    <p>Just text Carl and he'll handle the rest.</p>
+            <h2>Carl's got your home covered.</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-card-icon">&#128203;</div>
+                    <h3>Home maintenance schedule</h3>
+                    <p>Built around your home's age, systems, and location — with Carl explaining what you're actually preventing.</p>
                 </div>
-                <div class="feature">
-                    <img src="media/icon - batch.png" alt="Overwhelmed" class="problem-icon">
-                    <h3>Smart Batching</h3>
-                    <p>Carl groups your tasks intelligently, so you're not getting spammed with a dozen separate reminders.</p>
+                <div class="feature-card">
+                    <div class="feature-card-icon">&#128193;</div>
+                    <h3>Everything in one place</h3>
+                    <p>Repair history, model numbers, manuals, photos — Carl keeps it all so you never have to dig.</p>
                 </div>
-                <div class="feature">
-                    <img src="media/icon - messy.png" alt="Overwhelmed" class="problem-icon">
-                    <h3>Personalized</h3>
-                    <p>Carl learns about your specific home during setup. HVAC, water heater, fireplace — he's got it all covered.</p>
+                <div class="feature-card">
+                    <div class="feature-card-icon">&#128295;</div>
+                    <h3>Your home team, organized</h3>
+                    <p>Every contractor and provider who's worked on your home, what they did, and what it cost.</p>
                 </div>
-                <div class="feature">
-                    <img src="media/icon - couple.png" alt="Overwhelmed" class="problem-icon">
-                    <h3>Couples Friendly</h3>
-                    <p>Share your home with a partner? Both of you can get reminders and mark tasks complete.</p>
+                <div class="feature-card">
+                    <div class="feature-card-icon">&#10084;&#65039;</div>
+                    <h3>A health score for your home</h3>
+                    <p>One number that tells you where things stand — what's overdue, what's coming up, what's handled.</p>
                 </div>
-                <div class="feature">
-                    <img src="media/icon - checklist.png" alt="Overwhelmed" class="problem-icon">
-                    <h3>Custom Tasks</h3>
-                    <p>Add your own tasks. Water the garden weekly? Check the generator monthly? Carl remembers.</p>
+                <div class="feature-card">
+                    <div class="feature-card-icon">&#129302;</div>
+                    <h3>Answers for anything</h3>
+                    <p>Weird noise? Contractor quote? Carl diagnoses, reviews, and tells you exactly what to do next.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works">
+    <!-- App Screenshots -->
+    <section class="screenshots-section">
         <div class="container">
-            <h2>How It Works</h2>
-            
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Text START</h3>
-                    <p>Send a text to Carl and answer a few questions about your home. Takes 2 minutes.</p>
+            <div class="mc-header">
+                <div class="mc-arrows">
+                    <button class="mc-arrow" id="mcPrev" aria-label="Previous">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <button class="mc-arrow" id="mcNext" aria-label="Next">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Get Reminders</h3>
-                    <p>Carl sends you smart, batched reminders about what needs doing and when.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Stay on Track</h3>
-                    <p>Reply DONE when you complete a task. Carl updates your schedule and keeps you rolling.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Chat for More Help and Advice</h3>
-                    <p>If you have a question, just text Carl - he's like you're own personal home maintenance expert.</p>
+            </div>
+            <div class="mc-viewport">
+                <div class="mc-track" id="mcTrack">
+
+                    <div class="mc-card">
+                        <div class="mc-screenshot">
+                            <img src="media/IMG_0333 crop.png" alt="Maintenance task list">
+                        </div>
+                        <div class="mc-body">
+                            <span class="mc-tag">Maintenance</span>
+                            <h3>Always know what needs doing</h3>
+                            <p>Carl builds your home's task list around its age, systems, and location — and explains what you'd be preventing with each one.</p>
+                        </div>
+                    </div>
+
+                    <div class="mc-card">
+                        <div class="mc-screenshot">
+                            <img src="media/IMG_0339 crop.PNG" alt="Task detail">
+                        </div>
+                        <div class="mc-body">
+                            <span class="mc-tag">Task detail</span>
+                            <h3>The why behind every task</h3>
+                            <p>Carl doesn't just tell you what to do — he tells you why and how. You'll know exactly what you're preventing and what to expect.</p>
+                        </div>
+                    </div>
+
+                    <div class="mc-card">
+                        <div class="mc-screenshot">
+                            <img src="media/IMG_0335 crop.PNG" alt="Carl hub">
+                        </div>
+                        <div class="mc-body">
+                            <span class="mc-tag">Carl</span>
+                            <h3>Your home's command center</h3>
+                            <p>Home health score, maintenance history, and Carl — all in one place. Ask anything, anytime.</p>
+                        </div>
+                    </div>
+
+                    <div class="mc-card">
+                        <div class="mc-screenshot">
+                            <img src="media/IMG_0336 crop.PNG" alt="Carl chat">
+                        </div>
+                        <div class="mc-body">
+                            <span class="mc-tag">Ask Carl</span>
+                            <h3>Answers for anything</h3>
+                            <p>Weird noise? Contractor quote? Carl diagnoses the problem and tells you whether to call a pro or handle it yourself.</p>
+                        </div>
+                    </div>
+
+                    <div class="mc-card">
+                        <div class="mc-screenshot">
+                            <img src="media/IMG_0337 crop.png" alt="Providers">
+                        </div>
+                        <div class="mc-body">
+                            <span class="mc-tag">Providers</span>
+                            <h3>Your home team, organized</h3>
+                            <p>Every contractor, plumber, and handyman who's touched your home — what they did, what it cost, and how to reach them.</p>
+                        </div>
+                    </div>
+
+                    <div class="mc-card">
+                        <div class="mc-screenshot">
+                            <img src="media/IMG_0334 crop.PNG" alt="Asset detail">
+                        </div>
+                        <div class="mc-body">
+                            <span class="mc-tag">Assets</span>
+                            <h3>Everything tracked, nothing lost</h3>
+                            <p>Model numbers, manuals, install dates, photos — Carl keeps a full record of every appliance and system in your home.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Early Access -->
-    <section class="early-access" id="early-access">
+    <!-- Carl's Voice -->
+    <section class="carls-voice">
         <div class="container">
-            <h2>Join the Waitlist</h2>
-            <p>Be among the first to meet Carl. Launching soon.</p>
-            
-            <form class="signup-form" id="waitlist-form">
+            <div class="chat-grid">
+                <div class="chat-bubble">
+                    <img src="media/call_carl_logo_medium.png" alt="Carl" class="chat-avatar">
+                    <div class="chat-message">
+                        <p>Time to swap your HVAC filter. A clogged filter makes the system work twice as hard — raises your energy bill and pumps dust and allergens through every room. Takes about ten minutes.</p>
+                    </div>
+                </div>
+                <div class="chat-bubble">
+                    <img src="media/call_carl_logo_medium.png" alt="Carl" class="chat-avatar">
+                    <div class="chat-message">
+                        <p>Your water heater is due for a flush. Sediment builds up at the bottom, makes it less efficient, and shortens the life of the tank. Worth doing before it becomes a problem.</p>
+                    </div>
+                </div>
+                <div class="chat-bubble">
+                    <img src="media/call_carl_logo_medium.png" alt="Carl" class="chat-avatar">
+                    <div class="chat-message">
+                        <p>Got a contractor quote? Share it with me. I'll tell you if the price is in range, what questions to ask, and whether anything looks off.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notify / Waitlist -->
+    <section class="early-access" id="notify">
+        <div class="container">
+            <h2>Get notified when Carl launches.</h2>
+            <p>Drop your email and we'll reach out when the app is live.</p>
+
+            <form class="signup-form signup-form-simple" id="waitlist-form">
                 <input
                     type="email"
                     id="email"
-                    placeholder="Email"
+                    placeholder="Your email address"
                     required
                     autocomplete="email"
                 >
-                <input
-                    type="tel"
-                    id="phone"
-                    placeholder="Phone Number (optional)"
-                    autocomplete="tel"
-                >
-                <input
-                    type="text"
-                    id="zip"
-                    placeholder="Zip Code"
-                    required
-                    maxlength="5"
-                    autocomplete="postal-code"
-                >
-                <div class="consent-checkbox-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="sms-consent" name="sms-consent">
-                        <span class="checkbox-text">
-                            I consent to receive recurring automated text messages from <strong>Call Carl</strong> at the phone number provided. Message frequency varies (approx. 2-8 per month). Message and data rates may apply. Reply STOP to opt out. Consent is not required to join the waitlist. See <a href="/terms.html">Terms & Conditions</a>.
-                        </span>
-                    </label>
-                </div>
-
                 <div class="consent-checkbox-group">
                     <label class="checkbox-label">
                         <input type="checkbox" id="terms-consent" name="terms-consent" required>
                         <span class="checkbox-text">
-                            I agree to the <a href="/terms.html">Terms & Conditions</a> and <a href="/privacy.html">Privacy Policy</a>. <span style="color: #ff6b6b;">*</span>
+                            I agree to the <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Service</a>. <span style="color: #ffb89a;">*</span>
                         </span>
                     </label>
                 </div>
-                <button type="submit" id="submit-btn">Join Waitlist</button>
+                <button type="submit" id="submit-btn">Notify Me</button>
             </form>
             <div id="signup-message"></div>
         </div>
@@ -189,121 +249,105 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Call Carl. Built for overwhelmed homeowners like me.</p>
-            <p style="margin-top: 10px;">
-                <a href="mailto:hello@call-carl.com">Contact</a> |
-                <a href="/privacy.html">Privacy Policy</a> |
-                <a href="/terms.html">Terms & Conditions</a>
-            </p>
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img src="media/call_carl_logo_medium.png" alt="Call Carl" class="footer-logo">
+                <span>Call Carl</span>
+            </div>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <span class="footer-sep">&middot;</span>
+                <a href="/terms.html">Terms of Service</a>
+                <span class="footer-sep">&middot;</span>
+                <a href="mailto:hello@call-carl.com">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Call Carl</p>
         </div>
     </footer>
 
     <script>
-        // Wait for DOM and all scripts to load
+        // Multi-card carousel
+        (function() {
+            const track = document.getElementById('mcTrack');
+            const prev  = document.getElementById('mcPrev');
+            const next  = document.getElementById('mcNext');
+            let offset = 0;
+
+            function visibleCount() {
+                return window.innerWidth <= 600 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+            }
+
+            function cardWidth() {
+                const card = track.querySelector('.mc-card');
+                const gap  = 20;
+                return card.offsetWidth + gap;
+            }
+
+            function totalCards() {
+                return track.querySelectorAll('.mc-card').length;
+            }
+
+            function maxOffset() {
+                return Math.max(0, totalCards() - visibleCount());
+            }
+
+            function update() {
+                track.style.transform = `translateX(-${offset * cardWidth()}px)`;
+            }
+
+            prev.addEventListener('click', () => { offset = offset === 0 ? maxOffset() : offset - 1; update(); });
+            next.addEventListener('click', () => { offset = offset >= maxOffset() ? 0 : offset + 1; update(); });
+            window.addEventListener('resize', () => { offset = Math.min(offset, maxOffset()); update(); });
+
+            update();
+        })();
+    </script>
+
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Supabase client
             let supabase = null;
 
             try {
-                if (typeof CONFIG === 'undefined') {
-                    throw new Error('CONFIG not loaded');
-                }
-
-                if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_ANON_KEY) {
-                    throw new Error('Supabase credentials missing');
-                }
-
-                if (typeof window.supabase === 'undefined') {
-                    throw new Error('Supabase library not loaded');
-                }
-
+                if (typeof CONFIG === 'undefined') throw new Error('CONFIG not loaded');
+                if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_ANON_KEY) throw new Error('Supabase credentials missing');
+                if (typeof window.supabase === 'undefined') throw new Error('Supabase library not loaded');
                 supabase = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
-                console.log('Supabase initialized successfully');
             } catch (error) {
                 console.error('Initialization error:', error);
             }
 
-            // Handle form submission
             const form = document.getElementById('waitlist-form');
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                const messageDiv = document.getElementById('signup-message');
                 const submitButton = document.getElementById('submit-btn');
-
-                // Get form values
                 const email = document.getElementById('email').value.trim();
-                const phone = document.getElementById('phone').value.trim();
-                const zipCode = document.getElementById('zip').value.trim();
-                const smsConsent = document.getElementById('sms-consent').checked;
                 const termsConsent = document.getElementById('terms-consent').checked;
 
-                // Simple validation
-                if (phone && phone.trim() !== '') {
-                    const phoneDigits = phone.replace(/\D/g, '');
-                    if (phoneDigits.length < 10) {
-                        showMessage('Please enter a valid phone number', 'error');
-                        return;
-                    }
-                }
-
-                if (zipCode.replace(/\D/g, '').length !== 5) {
-                    showMessage('Please enter a valid 5-digit zip code', 'error');
-                    return;
-                }
-
-                // Terms & Conditions must be accepted
                 if (!termsConsent) {
-                    showMessage('Please agree to the Terms & Conditions and Privacy Policy to continue', 'error');
+                    showMessage('Please agree to the Privacy Policy and Terms of Service to continue.', 'error');
                     return;
                 }
 
-                // If phone is provided but no SMS consent, warn user
-                if (phone && phone.trim() !== '' && !smsConsent) {
-                    showMessage('If you provide a phone number, please check the SMS consent box to receive text reminders', 'error');
-                    return;
-                }
-
-                // Show loading state
                 submitButton.disabled = true;
-                submitButton.textContent = 'Joining...';
-                showMessage('', 'loading');
-            
+                submitButton.textContent = 'Signing up...';
+
                 try {
-                    if (!supabase) {
-                        throw new Error('Unable to connect. Please refresh and try again.');
-                    }
+                    if (!supabase) throw new Error('Unable to connect. Please refresh and try again.');
 
-                    // Prepare insert data
-                    const insertData = {
-                        email: email,
-                        zip_code: zipCode.replace(/\D/g, ''),
-                        sms_consent: smsConsent,
-                        terms_consent: termsConsent
-                    };
-
-                    // Only add phone if provided
-                    if (phone && phone.trim() !== '') {
-                        const phoneDigits = phone.replace(/\D/g, '');
-                        const normalizedPhone = '+1' + phoneDigits.slice(-10);
-                        insertData.phone = normalizedPhone;
-                    }
-
-                    // Insert into Supabase
                     const { data, error } = await supabase
                         .from('waitlist_signups')
-                        .insert([insertData])
+                        .insert([{ email: email, terms_consent: termsConsent, source: 'website' }])
                         .select();
 
                     if (error) {
                         if (error.code === '23505' || error.message.includes('duplicate')) {
-                            showMessage('You\'re already on the waitlist! We\'ll be in touch soon.', 'success');
+                            showMessage("You're already on the list. Carl will be in touch.", 'success');
                             form.reset();
                         } else {
                             throw error;
                         }
                     } else {
-                        showMessage('🎉 You\'re on the list! We\'ll be in touch soon.', 'success');
+                        showMessage("You're on the list. Carl will be in touch.", 'success');
                         form.reset();
                     }
                 } catch (error) {
@@ -311,16 +355,13 @@
                     showMessage(error.message || 'Something went wrong. Please try again.', 'error');
                 } finally {
                     submitButton.disabled = false;
-                    submitButton.textContent = 'Join Waitlist';
+                    submitButton.textContent = 'Notify Me';
                 }
             });
 
-            // Helper function to show messages
             function showMessage(text, type) {
                 const messageDiv = document.getElementById('signup-message');
                 messageDiv.textContent = text;
-                messageDiv.className = 'message-' + type;
-
                 if (type === 'success') {
                     messageDiv.style.cssText = 'padding: 20px; margin-top: 20px; border-radius: 15px; background: rgba(139, 158, 111, 0.3); border: 2px solid #8b9e6f; color: #faf6f1; font-weight: 600;';
                 } else if (type === 'error') {

@@ -50,15 +50,14 @@ header.with-margin {
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 700;
     color: #3d2817;
-    text-transform: uppercase;
-    letter-spacing: 2px;
     display: flex;
     align-items: center;
-    gap: 20px;
-    font-family: 'Inter', sans-serif;
+    gap: 16px;
+    font-family: 'Work Sans', sans-serif;
+    letter-spacing: 0;
 }
 
 .logo img {
@@ -113,7 +112,6 @@ h1 {
     margin-bottom: 10px;
     color: #3d2817;
     font-family: 'Work Sans', 'Inter', sans-serif;
-    letter-spacing: 2px;
 }
 
 h2 {
@@ -122,7 +120,6 @@ h2 {
     margin-bottom: 15px;
     color: #3d2817;
     font-family: 'Work Sans', 'Inter', sans-serif;
-    letter-spacing: 1px;
 }
 
 h3 {
@@ -440,8 +437,6 @@ a:hover {
 .early-access {
     padding: 80px 0;
     background: #a67c52;
-    border-top: 4px solid #8b6f47;
-    border-bottom: 4px solid #8b6f47;
     text-align: center;
     position: relative;
 }
@@ -459,12 +454,10 @@ a:hover {
 }
 
 .early-access h2 {
-    font-size: 40px;
+    font-size: 36px;
     margin-bottom: 20px;
     color: #faf6f1;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 900;
+    font-weight: 700;
     position: relative;
     font-family: 'Work Sans', 'Inter', sans-serif;
 }
@@ -616,7 +609,6 @@ footer {
     text-align: center;
     background: #5d4e37;
     color: #d4c4b0;
-    border-top: 3px solid #3d2817;
 }
 
 footer.with-margin {
@@ -709,6 +701,748 @@ footer a:hover {
         font-size: 10px;
         padding: 6px 10px;
         letter-spacing: 0.5px;
+    }
+}
+
+/* ============================================
+   Hero — App Layout (two-column)
+   ============================================ */
+.hero-app {
+    padding: 0 0 70px;
+    background: linear-gradient(145deg, #b87040 0%, #d09060 30%, #d4a574 60%, #e2bc90 100%);
+    border-bottom: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-nav {
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-contact {
+    font-size: 15px;
+    font-weight: 600;
+    color: #3d2817;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    padding: 8px 18px;
+    border: 1.5px solid rgba(61, 40, 23, 0.35);
+    border-radius: 8px;
+    transition: background 0.15s;
+}
+
+.nav-contact:hover {
+    background: rgba(61, 40, 23, 0.08);
+    text-decoration: none;
+}
+
+/* Large decorative circle behind Carl */
+.hero-app::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(255,255,255,0.13) 0%, transparent 68%);
+    pointer-events: none;
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 1.08;
+    color: #3d2817;
+    letter-spacing: -0.5px;
+    margin-bottom: 22px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.hero-text p {
+    font-size: 19px;
+    color: #4a3020;
+    font-weight: 500;
+    line-height: 1.65;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Standard Apple App Store badge */
+.app-store-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 9px 18px;
+    transition: opacity 0.2s;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.app-store-badge:hover {
+    opacity: 0.85;
+    text-decoration: none;
+    color: #fff;
+}
+
+.apple-logo {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.badge-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.badge-line-top {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    font-family: -apple-system, 'Inter', sans-serif;
+}
+
+.badge-line-bottom {
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    font-family: -apple-system, 'Inter', sans-serif;
+}
+
+.cta-link {
+    color: #3d2817;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.cta-link:hover {
+    text-decoration: underline;
+}
+
+.hero-image {
+    flex-shrink: 0;
+    width: 490px;
+    height: 480px;
+    position: relative;
+    overflow: visible;
+}
+
+.hero-phone-front,
+.hero-phone-back {
+    position: absolute;
+    width: 295px;
+}
+
+.hero-phone-front {
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.hero-phone-back {
+    top: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0.85;
+}
+
+/* ============================================
+   Screenshot Spotlights
+   ============================================ */
+.spotlight-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 20px 0;
+}
+
+.spotlight-row {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+
+.spotlight-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.spotlight-phone {
+    flex-shrink: 0;
+    width: 220px;
+}
+
+.spotlight-text {
+    flex: 1;
+}
+
+.spotlight-text h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #3d2817;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0 0 16px;
+    line-height: 1.2;
+}
+
+.spotlight-text p {
+    font-size: 17px;
+    color: #5d4e37;
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .spotlight-row,
+    .spotlight-row-reverse {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .spotlight-phone {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .spotlight-text {
+        text-align: center;
+    }
+
+    .spotlight-text h3 {
+        font-size: 22px;
+    }
+}
+
+/* ============================================
+   Features Section
+   ============================================ */
+.features-section {
+    padding: 48px 0 80px;
+    background: #f5ebe0;
+}
+
+.features-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #3d2817;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+}
+
+.feature-card {
+    background: #fff;
+    border: 1.5px solid #e0d0bc;
+    border-left: 4px solid #c8692e;
+    border-radius: 14px;
+    padding: 28px 26px;
+    flex: 0 0 calc(33.333% - 19px);
+    box-shadow: 0 2px 12px rgba(61, 40, 23, 0.06);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.feature-card:hover {
+    box-shadow: 0 6px 24px rgba(61, 40, 23, 0.11);
+    transform: translateY(-2px);
+}
+
+.feature-card-icon {
+    font-size: 40px;
+    margin-bottom: 18px;
+    display: block;
+    line-height: 1;
+}
+
+.feature-card h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #3d2817;
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 10px;
+    margin-top: 0;
+    line-height: 1.25;
+}
+
+.feature-card p {
+    font-size: 15px;
+    color: #6b5540;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ============================================
+   Carl's Voice Section
+   ============================================ */
+.carls-voice {
+    padding: 80px 0;
+    background: #e8d5c4;
+}
+
+.carls-voice h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #3d2817;
+    text-align: center;
+    margin-bottom: 12px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #5d4e37;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.chat-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.chat-bubble {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.chat-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid #8b6f47;
+    flex-shrink: 0;
+    background: #faf6f1;
+    object-fit: cover;
+}
+
+.chat-message {
+    background: #faf6f1;
+    border: 1.5px solid #d4c4b0;
+    border-radius: 0 16px 16px 16px;
+    padding: 16px 20px;
+    flex: 1;
+}
+
+.chat-message p {
+    font-size: 16px;
+    color: #3d2817;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ============================================
+   Screenshots Section — Multi-card carousel
+   ============================================ */
+.screenshots-section {
+    padding: 80px 0 100px;
+    background: #c9a07a;
+}
+
+.mc-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.mc-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #faf6f1;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+}
+
+.mc-arrows {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.mc-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(250,246,241,0.5);
+    background: rgba(250,246,241,0.12);
+    color: #faf6f1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.mc-arrow:hover {
+    border-color: rgba(250,246,241,0.9);
+    background: rgba(250,246,241,0.22);
+}
+
+.mc-viewport {
+    overflow: hidden;
+}
+
+.mc-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mc-card {
+    flex: 0 0 calc(33.333% - 14px);
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid #e8d8c8;
+    box-shadow: 0 2px 16px rgba(61,40,23,0.07);
+}
+
+.mc-screenshot {
+    width: 100%;
+    aspect-ratio: 9 / 10;
+    overflow: hidden;
+    background: #1a1a1a;
+    position: relative;
+}
+
+.mc-screenshot::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 55%;
+    background: linear-gradient(to bottom, transparent, #fff);
+    pointer-events: none;
+}
+
+.mc-screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% top;
+    display: block;
+}
+
+.mc-body {
+    padding: 22px 22px 26px;
+    border-top: 1.5px solid #ede0d4;
+}
+
+.mc-tag {
+    display: inline-block;
+    background: #fff3ec;
+    border: 1.5px solid #c8692e;
+    color: #c8692e;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 12px;
+}
+
+.mc-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #3d2817;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0 0 10px;
+    line-height: 1.25;
+}
+
+.mc-card p {
+    font-size: 14px;
+    color: #6b5540;
+    line-height: 1.65;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .mc-card {
+        flex: 0 0 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 600px) {
+    .mc-card {
+        flex: 0 0 80vw;
+    }
+    .mc-header h2 {
+        font-size: 26px;
+    }
+}
+
+.screenshots-grid {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.iphone-frame {
+    flex-shrink: 0;
+    width: 210px;
+    background: #111;
+    border: 6px solid #111;
+    border-radius: 46px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px #444;
+    position: relative;
+}
+
+.iphone-screen {
+    aspect-ratio: 9 / 19.5;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    border-radius: 40px;
+}
+
+.iphone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Dynamic Island */
+.iphone-screen::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 72px;
+    height: 20px;
+    background: #111;
+    border-radius: 12px;
+    z-index: 10;
+}
+
+.screenshots-note {
+    text-align: center;
+    font-size: 14px;
+    color: #8b6f47;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+/* ============================================
+   Waitlist form — simplified (email only)
+   ============================================ */
+.signup-form-simple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.signup-form-simple input[type="email"] {
+    width: 100%;
+    padding: 16px 20px;
+    border: 3px solid #3d2817;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    background: #faf6f1;
+}
+
+.signup-form-simple input[type="email"]:focus {
+    outline: none;
+    border-color: #8b6f47;
+    background: #fff;
+}
+
+.signup-form-simple .consent-checkbox-group {
+    width: 100%;
+    margin: 0;
+}
+
+.signup-form-simple button {
+    width: 100%;
+    padding: 16px 40px;
+    background: #c8692e;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+}
+
+.signup-form-simple button:hover {
+    background: #b05a24;
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   Footer — app layout
+   ============================================ */
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #d4c4b0;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.footer-logo {
+    width: 36px;
+    height: 36px;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-sep {
+    color: #8b6f47;
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: #8b6f47;
+    margin: 0;
+}
+
+/* ============================================
+   Responsive — new sections
+   ============================================ */
+@media (max-width: 900px) {
+    .feature-card {
+        flex: 0 0 calc(50% - 14px);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 44px;
+    }
+
+    .hero-inner {
+        flex-direction: column-reverse;
+        gap: 48px;
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 340px;
+        height: 400px;
+        margin-top: 28px;
+    }
+
+    .hero-phone-front,
+    .hero-phone-back {
+        width: 215px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-text p {
+        font-size: 17px;
+        max-width: 100%;
+    }
+
+    .hero-ctas {
+        justify-content: center;
+    }
+
+    .features-section h2,
+    .carls-voice h2,
+    .screenshots-section h2 {
+        font-size: 28px;
+    }
+
+    .feature-card {
+        flex: 0 0 100%;
+    }
+
+    .screenshots-grid {
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .iphone-frame {
+        width: 200px;
+    }
+
+    .carousel-slide.active {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .carousel-phone {
+        width: 200px;
+    }
+
+    .carousel-text {
+        text-align: center;
+    }
+
+    .carousel-text h3 {
+        font-size: 24px;
     }
 }
 
