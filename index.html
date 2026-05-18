@@ -268,9 +268,10 @@
     <script>
         // Multi-card carousel
         (function() {
-            const track = document.getElementById('mcTrack');
-            const prev  = document.getElementById('mcPrev');
-            const next  = document.getElementById('mcNext');
+            const track    = document.getElementById('mcTrack');
+            const viewport = document.querySelector('.mc-viewport');
+            const prev     = document.getElementById('mcPrev');
+            const next     = document.getElementById('mcNext');
             let offset = 0;
 
             function visibleCount() {
@@ -279,8 +280,7 @@
 
             function cardWidth() {
                 const card = track.querySelector('.mc-card');
-                const gap  = 20;
-                return card.offsetWidth + gap;
+                return card.offsetWidth + 20;
             }
 
             function totalCards() {
@@ -295,9 +295,20 @@
                 track.style.transform = `translateX(-${offset * cardWidth()}px)`;
             }
 
-            prev.addEventListener('click', () => { offset = offset === 0 ? maxOffset() : offset - 1; update(); });
-            next.addEventListener('click', () => { offset = offset >= maxOffset() ? 0 : offset + 1; update(); });
+            function goNext() { offset = offset >= maxOffset() ? 0 : offset + 1; update(); }
+            function goPrev() { offset = offset === 0 ? maxOffset() : offset - 1; update(); }
+
+            prev.addEventListener('click', goPrev);
+            next.addEventListener('click', goNext);
             window.addEventListener('resize', () => { offset = Math.min(offset, maxOffset()); update(); });
+
+            // Touch swipe
+            let touchStartX = 0;
+            viewport.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            viewport.addEventListener('touchend', (e) => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) { diff > 0 ? goNext() : goPrev(); }
+            }, { passive: true });
 
             update();
         })();
@@ -352,7 +363,8 @@
                     }
                 } catch (error) {
                     console.error('Submission error:', error);
-                    showMessage(error.message || 'Something went wrong. Please try again.', 'error');
+                    const isNetwork = error instanceof TypeError || error.message?.includes('Load failed') || error.message?.includes('Failed to fetch');
+                    showMessage(isNetwork ? 'Connection error — please check your network and try again.' : (error.message || 'Something went wrong. Please try again.'), 'error');
                 } finally {
                     submitButton.disabled = false;
                     submitButton.textContent = 'Notify Me';

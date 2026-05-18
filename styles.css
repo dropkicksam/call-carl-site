@@ -77,6 +77,23 @@ header.with-margin {
     text-decoration: none;
 }
 
+/* Header for privacy/terms pages */
+.page-header {
+    background: linear-gradient(135deg, #c8915a 0%, #d4a574 100%);
+    padding: 18px 0;
+    margin-bottom: 48px;
+}
+
+.page-header .logo {
+    text-decoration: none;
+    color: #3d2817;
+}
+
+.page-header .logo img {
+    width: 44px;
+    height: 44px;
+}
+
 
 
 a.phone-link {
@@ -1204,8 +1221,14 @@ footer a:hover {
 }
 
 @media (max-width: 600px) {
+    .mc-viewport {
+        margin: 0 -44px;
+    }
+    .mc-track {
+        padding: 0 44px;
+    }
     .mc-card {
-        flex: 0 0 80vw;
+        flex: 0 0 calc(100vw - 112px);
     }
     .mc-header h2 {
         font-size: 26px;

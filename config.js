@@ -5,8 +5,8 @@
 const CONFIG = {
     // Supabase Configuration
     // Get these from your Supabase project settings: https://app.supabase.com/project/_/settings/api
-    SUPABASE_URL: 'https://jlwubnfjxjzynfvinaab.supabase.co',
-    SUPABASE_ANON_KEY: 'sb_publishable_exupIgAhWNOqTGbUmm7IcQ_2qhTe4H0',
+    SUPABASE_URL: 'https://gmyoukxngvqbvayjnktc.supabase.co',
+    SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdteW91a3huZ3ZxYnZheWpua3RjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMjEwMjgsImV4cCI6MjA5NDY5NzAyOH0.UDygmxemSqVMG64-vFxGjsiEb3k5UP9edqX-EWyLXWY',
 
     // Admin Panel Configuration
     ADMIN_PASSWORD: 'callcarlvincent771930',
