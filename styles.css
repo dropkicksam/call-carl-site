@@ -1149,7 +1149,7 @@ footer a:hover {
 .mc-card {
     flex: 0 0 calc(33.333% - 14px);
     background: #fff;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
     border: 1.5px solid #e8d8c8;
     box-shadow: 0 2px 16px rgba(61,40,23,0.07);
@@ -1247,8 +1247,8 @@ footer a:hover {
     flex-shrink: 0;
     width: 210px;
     background: #111;
-    border: 6px solid #111;
-    border-radius: 40px;
+    border: 4px solid #111;
+    border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 0 0 1px #444;
     position: relative;
@@ -1259,7 +1259,7 @@ footer a:hover {
     overflow: hidden;
     position: relative;
     background: #000;
-    border-radius: 34px;
+    border-radius: 24px;
 }
 
 .iphone-screen img {
@@ -1269,7 +1269,7 @@ footer a:hover {
     display: block;
 }
 
-/* Dynamic Island */
+/* Dynamic Island 
 .iphone-screen::before {
     content: '';
     position: absolute;
@@ -1281,7 +1281,7 @@ footer a:hover {
     background: #111;
     border-radius: 12px;
     z-index: 10;
-}
+}*/
 
 .screenshots-note {
     text-align: center;
