@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — Call Carl Home Maintenance App</title>
+    <meta name="description" content="Answers to common questions about home maintenance schedules, HVAC filters, water heaters, contractor quotes, and how the Call Carl app works.">
+
+    <link rel="canonical" href="https://call-carl.com/faq">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="FAQ — Call Carl Home Maintenance App">
+    <meta property="og:description" content="Answers to common questions about home maintenance schedules, HVAC filters, water heaters, contractor quotes, and how the Call Carl app works.">
+    <meta property="og:image" content="https://call-carl.com/media/call_carl_logo_hero.png">
+    <meta property="og:url" content="https://call-carl.com/faq">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" href="media/carl_icon_cream_bg.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Work+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .faq-intro {
+            margin-bottom: 48px;
+        }
+        .faq-intro p {
+            font-size: 18px;
+            color: #4a3020;
+            line-height: 1.7;
+        }
+        .faq-section {
+            margin-bottom: 48px;
+        }
+        .faq-section h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #8b6f47;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8d5c4;
+        }
+        details {
+            border-bottom: 1px solid #e8d5c4;
+        }
+        details:first-of-type {
+            border-top: 1px solid #e8d5c4;
+        }
+        summary {
+            font-size: 17px;
+            font-weight: 700;
+            color: #3d2817;
+            padding: 18px 28px 18px 0;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            line-height: 1.4;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 22px;
+            font-weight: 400;
+            color: #8b6f47;
+            line-height: 1;
+        }
+        details[open] summary::after {
+            content: '−';
+        }
+        .faq-answer {
+            padding: 0 0 20px 0;
+            color: #4a3020;
+            font-size: 16px;
+            line-height: 1.75;
+        }
+        .faq-answer p { margin-bottom: 12px; }
+        .faq-answer p:last-child { margin-bottom: 0; }
+        .faq-answer ul {
+            margin: 8px 0 12px 20px;
+        }
+        .faq-answer ul li {
+            margin-bottom: 6px;
+        }
+        .faq-cta {
+            margin-top: 56px;
+            text-align: center;
+            padding: 48px 32px;
+            background: #f5ece3;
+            border-radius: 20px;
+            border: 2px solid #e8d5c4;
+        }
+        .faq-cta h2 {
+            font-size: 28px;
+            font-weight: 900;
+            color: #3d2817;
+            margin-bottom: 12px;
+            font-family: 'Work Sans', sans-serif;
+            border: none;
+            padding: 0;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+        .faq-cta p {
+            color: #4a3020;
+            font-size: 16px;
+            margin-bottom: 28px;
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Call Carl?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call Carl is an AI home maintenance assistant for iPhone. Carl builds a personalized maintenance schedule for your home, tracks your appliances and systems, stores your contractor and service provider history, and answers questions about anything going on with your home — from weird noises to contractor quotes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Call Carl free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Call Carl is free to download and use. If you find it useful, you can tip Carl from within the app — but it's entirely optional. If we introduce paid features in the future, we'll give you clear notice before any charges apply."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What iPhone or iOS version do I need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call Carl is available on iPhone running a current, supported version of iOS. You can find the exact requirements on the App Store listing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know what type of cooking fuel my home uses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check your stove. Gas stoves have burner grates and make a clicking sound when you turn a knob. Electric stoves have flat coil burners or a smooth glass cooktop. If you're not sure, look behind the stove — a gas line will be a flexible metal or yellow pipe. You can also check your utility bills: if you receive a gas bill, your home uses gas for at least one appliance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if I have radiators?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Radiators are cast-iron or steel units mounted on walls or under windows — they look like a series of connected metal fins or columns. If you have them, your home uses hydronic (hot water or steam) heat rather than forced air. Hot water radiators have a valve and are warm to the touch when heating is on. Steam radiators often have a single pipe and a small air vent on the side."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What type of water heater do I have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Look in your basement, utility closet, or garage. A large cylindrical tank (typically 40–80 gallons) is a traditional tank water heater — the most common type. A small box mounted on a wall with pipes but no tank is a tankless (on-demand) water heater. For fuel type: gas units have a flue pipe coming out the top or side; electric units have electrical connections and no flue. The label on the unit will confirm both."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know what type of heating system I have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Look for vents or registers in your floors, walls, or ceilings — that means forced air (furnace or heat pump). Radiators or baseboard heaters mean hot water or steam heat. Check your basement or utility room: a furnace looks like a large metal box with ductwork attached; a boiler is rounder and connects to pipes. The fuel type (gas, electric, oil) is labeled on the unit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find out when my home was built?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your home's age is usually on the property listing, your deed, or your homeowner's insurance policy. You can also look it up on your county assessor's website — search your address and the property record will show the year built."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if I have a septic system or city sewer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you're on a septic system, you won't receive a sewer bill from a utility company. You can also check your property inspection report or county records. A septic tank is buried in the yard — look for a clean-out cap or access riser. If you're in a city or dense suburb, you're almost certainly on municipal sewer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know what type of roof I have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Look at your home from outside. Asphalt shingles are the most common — flat, overlapping rectangular tabs. Metal roofs have a ribbed or standing-seam appearance. Tile roofs have a curved, overlapping clay or concrete look and are common in warm climates. Your home inspection report will also list the roof type and estimated age."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I change my HVAC filter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most homes should replace their HVAC filter every 1–3 months, depending on filter type, whether you have pets, and local air quality. A 1-inch basic filter typically needs replacing monthly. Thicker 4–5 inch media filters can last 6–12 months. A clogged filter makes your system work harder, raises your energy bill, and circulates dust and allergens through every room. Carl tracks this for your specific home and reminds you when it's time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I flush my water heater?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You should flush your water heater once a year. Sediment — mainly calcium and magnesium from hard water — builds up at the bottom of the tank over time. It makes the heater less efficient, increases energy costs, and shortens the life of the unit. Flushing takes about 30 minutes and can add years to your water heater's lifespan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What home maintenance should I do every year?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Annual home maintenance tasks typically include: flushing your water heater, testing smoke and carbon monoxide detectors, cleaning dryer vents, inspecting your roof and gutters, servicing your HVAC system, checking caulking around windows and doors, testing your sump pump if you have one, and cleaning refrigerator coils. The exact list depends on your home's age, systems, and location — Carl builds a schedule specific to your home."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Carl build my home maintenance schedule?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When you set up your home, Carl uses your home's age, location, and the systems and appliances you have to generate a personalized task list. It accounts for regional factors like climate and seasonal timing, tracks what you've done and what's coming up, and explains what each task is actually preventing — not just telling you what to do, but why."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a home health score?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your home health score is a single number that reflects how on top of your maintenance you are — what's overdue, what's coming up soon, and what's been handled. It updates as you complete tasks or log new ones. Think of it as a quick read on whether your home is in good shape or starting to fall behind."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Carl review a contractor quote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Share a contractor quote or invoice with Carl and it will tell you whether the price looks reasonable for your area, flag anything that seems off, suggest questions to ask before you sign, and help you understand what the work actually involves. It's especially useful for large jobs like HVAC replacement, roof repair, or plumbing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I track my appliances and warranties?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can log all your home's appliances and systems — including model numbers, purchase dates, warranty expiration, manuals, and photos. Carl uses this information to give you more accurate maintenance guidance and to keep a permanent record so you never have to dig for a model number when something breaks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I store contractor and service provider information?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Carl keeps a record of every contractor, plumber, electrician, and handyman who has worked on your home — what they did, what it cost, and how to reach them. When you need to call someone back or want to remember who did a job two years ago, it's all there."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I share my home with a partner or family member?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can invite household members to share your home in the app so you're both working from the same maintenance schedule, asset list, and provider history."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's coming next for Call Carl?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The roadmap includes finding and booking highly rated local service providers directly through the app, getting competing quotes from contractors without making phone calls, and having Carl handle routine tasks automatically — like reordering air filters when they're due. The goal is for Carl to go from telling you what needs doing to actually taking care of it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my home data private and secure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Your data is stored securely and is never sold or used for advertising. You can read the full details in our Privacy Policy. You can also delete your account and all associated data at any time from within the app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I delete my account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can delete your account directly from within the app at any time. When you do, all your personal data is permanently deleted within 30 days."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="page-content">
+    <header class="page-header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="media/call_carl_logo_medium.png" alt="Call Carl Logo">
+                Call Carl
+            </a>
+        </div>
+    </header>
+
+    <div class="container narrow">
+
+        <div class="faq-intro">
+            <h1>Frequently Asked Questions</h1>
+            <p>Everything you need to know about Call Carl and keeping your home in good shape.</p>
+        </div>
+
+        <div class="faq-section">
+            <h2>Getting Started</h2>
+
+            <details>
+                <summary>What is Call Carl?</summary>
+                <div class="faq-answer">
+                    <p>Call Carl is an AI home maintenance assistant for iPhone. Carl builds a personalized maintenance schedule for your home, tracks your appliances and systems, stores your contractor and service provider history, and answers questions about anything going on with your home — from weird noises to contractor quotes.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Is Call Carl free?</summary>
+                <div class="faq-answer">
+                    <p>Yes. Call Carl is free to <a href="https://apps.apple.com/us/app/call-carl/id6770673431">download on the App Store</a>. If you find it useful, you can tip Carl from within the app — but it's entirely optional. If we introduce paid features in the future, we'll give you clear notice before any charges apply.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>What iPhone or iOS version do I need?</summary>
+                <div class="faq-answer">
+                    <p>Call Carl is available on iPhone running a current, supported version of iOS. You can find the exact requirements on the <a href="https://apps.apple.com/us/app/call-carl/id6770673431">App Store listing</a>.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I get started?</summary>
+                <div class="faq-answer">
+                    <p>Download the app, create an account, and enter your home address. Carl uses your home's location, age, and systems to build your first maintenance schedule. From there you can add appliances, log past repairs, and start asking Carl questions.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-section">
+            <h2>Setting Up Your Home</h2>
+
+            <details>
+                <summary>How do I know what type of cooking fuel my home uses?</summary>
+                <div class="faq-answer">
+                    <p>Check your stove. Gas stoves have burner grates and make a clicking sound when you turn a knob. Electric stoves have flat coil burners or a smooth glass cooktop.</p>
+                    <p>If you're not sure, look behind the stove — a gas line will be a flexible metal or yellow pipe. You can also check your utility bills: if you receive a gas bill, your home uses gas for at least one appliance.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I know what type of heating system I have?</summary>
+                <div class="faq-answer">
+                    <p>Look for vents or registers in your floors, walls, or ceilings — that means forced air (furnace or heat pump). Radiators or baseboard heaters mean hot water or steam heat.</p>
+                    <p>Check your basement or utility room: a furnace looks like a large metal box with ductwork attached; a boiler is rounder and connects to pipes. The fuel type (gas, electric, oil) is labeled on the unit.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I know if I have radiators?</summary>
+                <div class="faq-answer">
+                    <p>Radiators are cast-iron or steel units mounted on walls or under windows — they look like a series of connected metal fins or columns. If you have them, your home uses hydronic (hot water or steam) heat rather than forced air.</p>
+                    <p>Hot water radiators have a valve and are warm to the touch when heating is on. Steam radiators often have a single pipe and a small air vent on the side.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>What type of water heater do I have?</summary>
+                <div class="faq-answer">
+                    <p>Look in your basement, utility closet, or garage. A large cylindrical tank (typically 40–80 gallons) is a traditional tank water heater — the most common type. A small box mounted on a wall with pipes but no tank is a tankless (on-demand) water heater.</p>
+                    <p>For fuel type: gas units have a flue pipe coming out the top or side; electric units have electrical connections and no flue. The label on the unit will confirm both.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I find out when my home was built?</summary>
+                <div class="faq-answer">
+                    <p>Your home's age is usually on the property listing, your deed, or your homeowner's insurance policy. You can also look it up on your county assessor's website — search your address and the property record will show the year built.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I know if I have a septic system or city sewer?</summary>
+                <div class="faq-answer">
+                    <p>If you're on a septic system, you won't receive a sewer bill from a utility company. You can also check your property inspection report or county records. A septic tank is buried in the yard — look for a clean-out cap or access riser.</p>
+                    <p>If you're in a city or dense suburb, you're almost certainly on municipal sewer.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I know what type of roof I have?</summary>
+                <div class="faq-answer">
+                    <p>Look at your home from outside. Asphalt shingles are the most common — flat, overlapping rectangular tabs. Metal roofs have a ribbed or standing-seam appearance. Tile roofs have a curved, overlapping clay or concrete look and are common in warm climates.</p>
+                    <p>Your home inspection report will also list the roof type and estimated age.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-section">
+            <h2>Using Carl</h2>
+
+            <details>
+                <summary>How does Carl build my home maintenance schedule?</summary>
+                <div class="faq-answer">
+                    <p>When you set up your home, Carl uses your home's age, location, and the systems and appliances you have to generate a personalized task list. It accounts for regional factors like climate and seasonal timing, tracks what you've completed and what's coming up, and explains what each task is actually preventing — not just what to do, but why it matters.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>What is a home health score?</summary>
+                <div class="faq-answer">
+                    <p>Your home health score is a single number that reflects how on top of your maintenance you are — what's overdue, what's coming up, and what's been handled. It updates as you complete tasks or log new ones. Think of it as a quick pulse check on whether your home is in good shape or starting to fall behind.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Can Carl review a contractor quote?</summary>
+                <div class="faq-answer">
+                    <p>Yes. Share a contractor quote or invoice with Carl and it will tell you whether the price looks reasonable, flag anything that seems off, and suggest questions to ask before you sign. It's especially useful for large jobs like HVAC replacement, roof repair, or plumbing work where it's hard to know if you're getting a fair deal.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Can I track my appliances and warranties?</summary>
+                <div class="faq-answer">
+                    <p>Yes. You can log all your home's appliances and systems — including model numbers, purchase dates, warranty expiration, manuals, and photos. Carl uses this information to give you more accurate maintenance guidance, and it's all there when you need a model number or want to check if something is still under warranty.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Can I store contractor and service provider information?</summary>
+                <div class="faq-answer">
+                    <p>Yes. Carl keeps a record of every contractor, plumber, electrician, and handyman who has worked on your home — what they did, what it cost, and how to reach them. When you need to call someone back or want to remember who replaced your water heater two years ago, it's all there.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Can I share my home with a partner or family member?</summary>
+                <div class="faq-answer">
+                    <p>Yes. You can invite household members to share your home in the app so everyone is working from the same maintenance schedule, asset list, and provider history.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>What's coming next for Call Carl?</summary>
+                <div class="faq-answer">
+                    <p>The goal is for Carl to go from telling you what needs doing to actually taking care of it. That means:</p>
+                    <ul>
+                        <li><strong>Finding and booking service providers</strong> — highly rated local contractors, plumbers, and electricians, bookable directly through the app</li>
+                        <li><strong>Getting quotes without phone calls</strong> — describe a job and get competing estimates from vetted pros</li>
+                        <li><strong>Auto-completing routine tasks</strong> — Carl reorders your air filters when they're due, so you never have to think about it</li>
+                    </ul>
+                    <p>Carl's job isn't just to remind you — it's to handle as much as possible so you don't have to.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-section">
+            <h2>Home Maintenance Basics</h2>
+
+            <details>
+                <summary>How often should I change my HVAC filter?</summary>
+                <div class="faq-answer">
+                    <p>Most homes should replace their HVAC filter every 1–3 months, depending on filter type, whether you have pets, and local air quality.</p>
+                    <ul>
+                        <li><strong>1-inch basic filters:</strong> every 1–2 months</li>
+                        <li><strong>4–5 inch media filters:</strong> every 6–12 months</li>
+                        <li><strong>Homes with pets or allergies:</strong> more frequently</li>
+                    </ul>
+                    <p>A clogged filter makes your system work harder, raises your energy bill, and circulates dust and allergens through every room. Carl tracks this for your specific setup and reminds you when it's time.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>How often should I flush my water heater?</summary>
+                <div class="faq-answer">
+                    <p>Once a year. Sediment — mainly calcium and magnesium from hard water — builds up at the bottom of the tank over time. It makes the heater less efficient, increases energy costs, and shortens the life of the unit. Flushing takes about 30 minutes and can add years to your water heater's lifespan.</p>
+                    <p>If you have very hard water, twice a year is even better.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>What home maintenance should I do every year?</summary>
+                <div class="faq-answer">
+                    <p>Annual tasks most homeowners should cover include:</p>
+                    <ul>
+                        <li>Flush the water heater</li>
+                        <li>Service the HVAC system (professional tune-up)</li>
+                        <li>Clean dryer vents</li>
+                        <li>Inspect roof and gutters</li>
+                        <li>Test smoke and carbon monoxide detectors</li>
+                        <li>Check caulking around windows, doors, and tubs</li>
+                        <li>Clean refrigerator condenser coils</li>
+                        <li>Test the sump pump (if you have one)</li>
+                        <li>Inspect the attic for signs of leaks or pests</li>
+                    </ul>
+                    <p>The exact list depends on your home's age, systems, and location. Carl builds a schedule specific to your home and keeps track of what's been done.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>What happens if I fall behind on home maintenance?</summary>
+                <div class="faq-answer">
+                    <p>Small maintenance tasks exist to prevent bigger, more expensive problems. Skipping an HVAC filter change strains the motor. Ignoring gutter cleaning leads to water damage. Putting off a dryer vent cleaning is a fire hazard.</p>
+                    <p>If you're behind, the best move is to get a clear picture of what's overdue and work through it. Carl shows you your home health score, flags what's most urgent, and explains what's actually at risk — so you can prioritize without guessing.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-section">
+            <h2>Privacy &amp; Account</h2>
+
+            <details>
+                <summary>Is my home data private and secure?</summary>
+                <div class="faq-answer">
+                    <p>Yes. Your data is stored securely and is never sold or used for advertising. You can read the full details in our <a href="/privacy">Privacy Policy</a>.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I delete my account?</summary>
+                <div class="faq-answer">
+                    <p>You can delete your account directly from within the app at any time. When you do, all your personal data is permanently deleted within 30 days. You can also email <a href="mailto:hello@call-carl.com">hello@call-carl.com</a> to request deletion.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>I have a question that isn't answered here.</summary>
+                <div class="faq-answer">
+                    <p>Email us at <a href="mailto:hello@call-carl.com">hello@call-carl.com</a> and we'll get back to you.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-cta">
+            <h2>Ready to get started?</h2>
+            <p>Download Carl and get your home under control in minutes.</p>
+            <a href="https://apps.apple.com/us/app/call-carl/id6770673431" class="app-store-badge">
+                <svg class="apple-logo" viewBox="0 0 814 1000" fill="white" aria-hidden="true"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.5 135.4-317.3 269-317.3 70.1 0 128.4 46.4 172.5 46.4 42.8 0 109.6-49 192.5-49 31.1 0 107.7 2.6 168.2 98.3zm-180.9-125.1c-31.1 36.9-75.8 65.2-152.1 65.2-9.6 0-19.2-1.3-28.5-2.6 1.3-45.2 17.9-87.4 47.7-117.8 32.4-32.7 80.5-55.8 132.3-58.4 1.3 8.3 1.9 16.6 1.9 23.6 0 43.9-15.9 88.5-101.3 89z"/></svg>
+                <div class="badge-text">
+                    <span class="badge-line-top">Download on the</span>
+                    <span class="badge-line-bottom">App Store</span>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img src="media/carl_icon_cream_bg.png" alt="Call Carl" class="footer-logo">
+                <span>Call Carl</span>
+            </div>
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <span class="footer-sep">&middot;</span>
+                <a href="/terms">Terms of Service</a>
+                <span class="footer-sep">&middot;</span>
+                <a href="mailto:hello@call-carl.com">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Call Carl</p>
+        </div>
+    </footer>
+</body>
+</html>
