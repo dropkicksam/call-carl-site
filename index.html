@@ -6,11 +6,20 @@
     <title>Call Carl — Your AI Home Maintenance Assistant</title>
     <meta name="description" content="Carl is an AI home maintenance assistant who keeps track of your home's systems, tells you what needs attention, and explains why — so nothing catches you off guard.">
 
+    <link rel="canonical" href="https://call-carl.com/">
+
     <!-- Open Graph -->
     <meta property="og:title" content="Call Carl — Your AI Home Maintenance Assistant">
     <meta property="og:description" content="Carl is an AI home maintenance assistant who keeps track of your home's systems, tells you what needs attention, and explains why.">
-    <meta property="og:image" content="media/call_carl_logo_hero.png">
+    <meta property="og:image" content="https://call-carl.com/media/call_carl_logo_hero.png">
+    <meta property="og:url" content="https://call-carl.com/">
     <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Call Carl — Your AI Home Maintenance Assistant">
+    <meta name="twitter:description" content="Carl is an AI home maintenance assistant who keeps track of your home's systems, tells you what needs attention, and explains why.">
+    <meta name="twitter:image" content="https://call-carl.com/media/call_carl_logo_hero.png">
 
     <link rel="icon" type="image/png" href="media/carl_icon_cream_bg.png">
 
@@ -22,11 +31,76 @@
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Supabase Client -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <!-- Config -->
-    <script src="config.js"></script>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://call-carl.com/#organization",
+          "name": "Call Carl",
+          "url": "https://call-carl.com",
+          "logo": "https://call-carl.com/media/call_carl_logo_medium.png",
+          "email": "hello@call-carl.com",
+          "description": "Call Carl is an AI home maintenance assistant that tracks your home's systems, stays ahead of what needs attention, and explains why."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://call-carl.com/#website",
+          "url": "https://call-carl.com",
+          "name": "Call Carl",
+          "publisher": { "@id": "https://call-carl.com/#organization" }
+        },
+        {
+          "@type": "MobileApplication",
+          "@id": "https://call-carl.com/#app",
+          "name": "Call Carl",
+          "operatingSystem": "iOS",
+          "applicationCategory": "LifestyleApplication",
+          "url": "https://call-carl.com",
+          "publisher": { "@id": "https://call-carl.com/#organization" },
+          "description": "Carl is an AI assistant that tracks your home's systems, stays ahead of what needs attention, and explains why — so nothing ever catches you off guard. Carl builds a personalized maintenance schedule, tracks your assets and providers, gives your home a health score, and reviews contractor quotes.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://call-carl.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Call Carl?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Call Carl is an AI home maintenance assistant for iOS that tracks your home's systems, builds a personalized maintenance schedule, keeps a record of your appliances and providers, and explains what needs attention and why."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Carl review a contractor quote?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Share a contractor quote with Carl and it will tell you whether the price is in range, what questions to ask, and whether anything looks off."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does Carl build my maintenance schedule?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Carl builds your home's task list around its age, systems, and location, then tracks your progress and explains what each task is preventing."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -52,7 +126,6 @@
                             <span class="badge-line-bottom">App Store</span>
                         </div>
                     </a>
-                    <a href="#notify" class="cta-link">Sign up for updates &rarr;</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -225,30 +298,18 @@
         </div>
     </section>
 
-    <!-- Notify / Waitlist -->
-    <section class="early-access" id="notify">
-        <div class="container">
-            <h2>Sign up for updates.</h2>
-
-            <form class="signup-form signup-form-simple" id="waitlist-form">
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Your email address"
-                    required
-                    autocomplete="email"
-                >
-                <div class="consent-checkbox-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="terms-consent" name="terms-consent" required>
-                        <span class="checkbox-text">
-                            I agree to the <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Service</a>. <span style="color: #ffb89a;">*</span>
-                        </span>
-                    </label>
+    <!-- Download CTA -->
+    <section class="early-access" id="download">
+        <div class="container" style="text-align: center;">
+            <h2>Your home is waiting.</h2>
+            <p style="margin-bottom: 2rem;">Download Carl and get started in minutes.</p>
+            <a href="https://apps.apple.com/us/app/call-carl/id6770673431" class="app-store-badge">
+                <svg class="apple-logo" viewBox="0 0 814 1000" fill="white" aria-hidden="true"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.5 135.4-317.3 269-317.3 70.1 0 128.4 46.4 172.5 46.4 42.8 0 109.6-49 192.5-49 31.1 0 107.7 2.6 168.2 98.3zm-180.9-125.1c-31.1 36.9-75.8 65.2-152.1 65.2-9.6 0-19.2-1.3-28.5-2.6 1.3-45.2 17.9-87.4 47.7-117.8 32.4-32.7 80.5-55.8 132.3-58.4 1.3 8.3 1.9 16.6 1.9 23.6 0 43.9-15.9 88.5-101.3 89z"/></svg>
+                <div class="badge-text">
+                    <span class="badge-line-top">Download on the</span>
+                    <span class="badge-line-bottom">App Store</span>
                 </div>
-                <button type="submit" id="submit-btn">Notify Me</button>
-            </form>
-            <div id="signup-message"></div>
+            </a>
         </div>
     </section>
 
@@ -319,74 +380,5 @@
         })();
     </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let supabase = null;
-
-            try {
-                if (typeof CONFIG === 'undefined') throw new Error('CONFIG not loaded');
-                if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_ANON_KEY) throw new Error('Supabase credentials missing');
-                if (typeof window.supabase === 'undefined') throw new Error('Supabase library not loaded');
-                supabase = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
-            } catch (error) {
-                console.error('Initialization error:', error);
-            }
-
-            const form = document.getElementById('waitlist-form');
-            form.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                const submitButton = document.getElementById('submit-btn');
-                const email = document.getElementById('email').value.trim();
-                const termsConsent = document.getElementById('terms-consent').checked;
-
-                if (!termsConsent) {
-                    showMessage('Please agree to the Privacy Policy and Terms of Service to continue.', 'error');
-                    return;
-                }
-
-                submitButton.disabled = true;
-                submitButton.textContent = 'Signing up...';
-
-                try {
-                    if (!supabase) throw new Error('Unable to connect. Please refresh and try again.');
-
-                    const { error } = await supabase
-                        .from('waitlist_signups')
-                        .insert([{ email: email, terms_consent: termsConsent, source: 'website' }]);
-
-                    if (error) {
-                        if (error.code === '23505' || error.message.includes('duplicate')) {
-                            showMessage("You're already on the list. Carl will be in touch.", 'success');
-                            form.reset();
-                        } else {
-                            throw error;
-                        }
-                    } else {
-                        showMessage("You're on the list. Carl will be in touch.", 'success');
-                        form.reset();
-                    }
-                } catch (error) {
-                    console.error('Submission error:', error);
-                    const isNetwork = error instanceof TypeError || error.message?.includes('Load failed') || error.message?.includes('Failed to fetch');
-                    showMessage(isNetwork ? 'Connection error — please check your network and try again.' : (error.message || 'Something went wrong. Please try again.'), 'error');
-                } finally {
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Notify Me';
-                }
-            });
-
-            function showMessage(text, type) {
-                const messageDiv = document.getElementById('signup-message');
-                messageDiv.textContent = text;
-                if (type === 'success') {
-                    messageDiv.style.cssText = 'padding: 20px; margin-top: 20px; border-radius: 15px; background: rgba(139, 158, 111, 0.3); border: 2px solid #8b9e6f; color: #faf6f1; font-weight: 600;';
-                } else if (type === 'error') {
-                    messageDiv.style.cssText = 'padding: 20px; margin-top: 20px; border-radius: 15px; background: rgba(184, 93, 58, 0.3); border: 2px solid #b85d3a; color: #faf6f1; font-weight: 600;';
-                } else {
-                    messageDiv.style.cssText = '';
-                }
-            }
-        });
-    </script>
 </body>
 </html>
